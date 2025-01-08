@@ -94,7 +94,9 @@ const Auth = () => {
                 const responseData = await sendRequest(
                     // process.env.REACT_APP_BACKEND_URL+'/users/signup'
                     
-                    'http://localhost:5000/api/users/signup',
+                    // 'http://localhost:5000/api/users/signup',
+                    import.meta.env.VITE_BACKEND_URL+'/users/signup',
+
 
                     'POST',
                     formData
