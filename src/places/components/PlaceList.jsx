@@ -10,7 +10,7 @@ const PlaceList = props => {
                 <CardActionArea>
                     <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <Typography variant="h5" sx={{ color: 'white', marginBottom: 2 }}>No Place found. Maybe create one?</Typography>
-                        <CustomButton variant="outlined" sx={{ color: 'white', borderColor: 'white' }}>Share Place</CustomButton>
+                        {/* <CustomButton variant="outlined" sx={{ color: 'white', borderColor: 'white' }}>Share Place</CustomButton> */}
                     </CardContent>
                 </CardActionArea>
             </Card>
