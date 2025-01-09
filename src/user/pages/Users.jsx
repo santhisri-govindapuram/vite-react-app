@@ -12,7 +12,7 @@ const Users = () => {
     const fetchUsers = async () => {
       try {
         const responseData = await sendRequest(
-          `${import.meta.env.VITE_BACKEND_URL}/users`
+          `${import.meta.env.VITE_BACKEND_URL}/users` 
           // 'http://localhost:5000/api/users'
         );
 

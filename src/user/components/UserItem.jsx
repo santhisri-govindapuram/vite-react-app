@@ -32,7 +32,9 @@ const UserItem = (props) => {
           <CardHeader
             avatar={
               <Avatar
-                src={`${import.meta.env.VITE_ASSET_URL}/${props.image}`}
+                // src={`${import.meta.env.VITE_ASSET_URL}/${props.image}`}
+                src={props.image}
+
                 // src={`http://localhost:5000/${props.image}`}
                 alt={props.name}
                 sx={{

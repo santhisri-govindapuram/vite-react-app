@@ -84,6 +84,34 @@ const Auth = () => {
                 console.error('Login failed:', err);
             }
         } else {
+            // try {
+            //     console.log('Attempting to sign up...');
+            //     const formData = new FormData();
+            //     formData.append('email', formState.inputs.email.value);
+            //     formData.append('name', formState.inputs.name.value);
+            //     formData.append('password', formState.inputs.password.value);
+            //     formData.append('image', formState.inputs.image.value);
+            //     const responseData = await sendRequest(
+            //         // process.env.REACT_APP_BACKEND_URL+'/users/signup'
+                    
+            //         // 'http://localhost:5000/api/users/signup',
+            //         import.meta.env.VITE_BACKEND_URL+'/users/signup',
+
+
+            //         'POST',
+            //         formData,
+            //     );
+            //     console.log('Signup Response Data:', responseData); // Log the response data
+            //     if (responseData.userId && responseData.token) {
+            //         auth.login(responseData.userId, responseData.token);
+            //     } else {
+            //         throw new Error('Signup response is missing userId or token.');
+            //     }
+            // } catch (err) {
+            //     console.error('Signup failed:', err);
+            // }
+
+
             try {
                 console.log('Attempting to sign up...');
                 const formData = new FormData();
@@ -91,25 +119,30 @@ const Auth = () => {
                 formData.append('name', formState.inputs.name.value);
                 formData.append('password', formState.inputs.password.value);
                 formData.append('image', formState.inputs.image.value);
-                const responseData = await sendRequest(
-                    // process.env.REACT_APP_BACKEND_URL+'/users/signup'
-                    
-                    // 'http://localhost:5000/api/users/signup',
-                    import.meta.env.VITE_BACKEND_URL+'/users/signup',
-
-
-                    'POST',
-                    formData
-                );
+              
+                const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/users/signup', {
+                  method: 'POST',
+                  body: formData,
+                });
+              
+                if (!response.ok) {
+                  // Log the error response
+                  const errorText = await response.text();
+                  console.error('Error Response:', errorText);
+                  throw new Error('Signup failed with status: ' + response.status);
+                }
+              
+                const responseData = await response.json();
                 console.log('Signup Response Data:', responseData); // Log the response data
                 if (responseData.userId && responseData.token) {
-                    auth.login(responseData.userId, responseData.token);
+                  auth.login(responseData.userId, responseData.token);
                 } else {
-                    throw new Error('Signup response is missing userId or token.');
+                  throw new Error('Signup response is missing userId or token.');
                 }
-            } catch (err) {
+              } catch (err) {
                 console.error('Signup failed:', err);
-            }
+              }
+              
         }
     };
 
