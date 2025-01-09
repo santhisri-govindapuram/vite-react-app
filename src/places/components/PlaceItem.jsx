@@ -63,8 +63,10 @@ const PlaceItem = (props) => {
                     <CardMedia
                         component="img"
                         height="200"
-                        src={`${import.meta.env.VITE_ASSET_URL}/${props.image}`}
+                        // src={`${import.meta.env.VITE_ASSET_URL}/${props.image}`}
                         // src={`http://localhost:5000/${props.image}`}
+                        src={props.image}
+
                         alt={props.title}
 
                     />
