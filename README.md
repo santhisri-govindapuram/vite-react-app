@@ -19,6 +19,8 @@ npm run dev
 # Images
 
 ![Home Page](images/home%20page.jpg)
+![User Places](images/user%20places.jpg)
+
 
 
 
