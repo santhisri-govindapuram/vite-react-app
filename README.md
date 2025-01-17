@@ -1,15 +1,17 @@
-# React + Vite
+# PlaceShare Frontend
+A React-based frontend application for the PlaceShare platform, enabling users to share and explore places with images and locations.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# About
+The frontend of PlaceShare is built using React and the Vite tool for a fast and optimized development experience. It communicates with the backend API to fetch and store data in MongoDB. The application is hosted on Vercel, ensuring a smooth user experience and quick access.
 
-Currently, two official plugins are available:
+# Features
+View and share places with images and exact locations.
+Responsive design for seamless experience across devices.
+Integration with backend APIs for real-time data updates.
+Deployed using Vercel for high availability and performance.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Start the development server
+```
+npm run dev
 
-
-
-
-# This Application created using vite-react-app 
-# The env file we have to access using 
-# import.meta.env
+```
