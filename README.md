@@ -15,3 +15,6 @@ Deployed using Vercel for high availability and performance.
 npm run dev
 
 ```
+
+![Home Page](images/home%20page.jpg)
+
